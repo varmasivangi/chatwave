@@ -1,0 +1,51 @@
+:root {
+  --primary: #57B9B3;      /* Teal */
+  --secondary: #4A90E2;    /* Soft Blue */
+  --accent: #FF6F61;       /* Coral */
+  
+  --dark: #2A2D34;
+  --light: #F4F7F6;
+  --white: #ffffff;
+
+  --text-color: #2A2D34;
+  --text-muted: #7F8C8D;
+
+  --border-color: #E5E5E5;
+
+  --gradient-primary: linear-gradient(135deg, #57B9B3, #4A90E2);
+}
+
+*{
+    padding: 0px;
+    margin: 0px;
+}
+/* BUTTONS */
+.btn {
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  padding: 10px 18px;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: 0.2s;
+
+  &:hover {
+    background: var(--secondary);
+  }
+}
+
+/* CARDS */
+.card {
+  background: var(--light);
+  border: 1px solid var(--border-color);
+  padding: 20px;
+  border-radius: 12px;
+}
+
+/* TEXT */
+.text-primary { color: var(--primary); }
+.text-muted { color: var(--text-muted); }
+
+::-webkit-scrollbar {
+  width: 10px !important;
+}

@@ -1,0 +1,83 @@
+// :root {
+//   --primary: #57B9B3;
+//   --secondary: #4A90E2;
+//   --accent: #FF6F61;
+  
+//   --dark: #2A2D34;
+//   --light: #F4F7F6;
+//   --white: #ffffff;
+
+//   --text-color: #2A2D34;
+//   --text-muted: #7F8C8D;
+
+//   --border-color: #E5E5E5;
+
+//   --gradient-primary: linear-gradient(135deg, #57B9B3, #4A90E2);
+// }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ---------- LAYOUT ---------- */
+.layout {
+  display: flex;
+  width: 100%;
+  height: calc(100vh - 70px);
+  background: var(--light);
+  overflow: hidden;
+}
+
+/* ---------- SIDEBAR ---------- */
+app-sidebar {
+  width: 250px;
+  background: var(--white);
+  border-right: 1px solid var(--border-color);
+  height: 100%;
+  position: sticky;
+  top: 70px;
+  padding: 20px;
+  overflow-y: auto;
+  transition: width 0.3s ease;
+}
+
+app-sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+app-sidebar::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  app-sidebar {
+    width: 70px;
+    padding: 10px;
+  }
+}
+
+/* ---------- MAIN CONTENT ---------- */
+.content {
+  flex: 1;
+  padding: 30px 40px;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+.content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.content::-webkit-scrollbar-thumb {
+  background: var(--secondary);
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .content {
+    padding: 15px;
+  }
+}
