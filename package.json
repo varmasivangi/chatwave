@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:chatwave": "node dist/chatwave/server/server.mjs"
+    "serve:ssr:chatwave": "node dist/chatwave/server/server.mjs",
+    "generate:api": "openapi-generator-cli generate -i http://127.0.0.1:5000/api-docs-json -g typescript-angular -o src/app/api"
   },
   "private": true,
   "dependencies": {

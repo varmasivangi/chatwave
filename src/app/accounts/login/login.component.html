@@ -2,13 +2,14 @@
   <div class="login-card p-4">
     <h2 class="text-center mb-4">Login</h2>
 
-    <form>
+    <form [formGroup]="loginForm">
       <div class="mb-3">
         <label class="form-label">Email Address</label>
         <input
           type="email"
           class="form-control"
           placeholder="Enter email"
+          formControlName="userName"
         />
       </div>
 
@@ -18,14 +19,24 @@
           type="password"
           class="form-control"
           placeholder="Enter password"
+          formControlName="password"
+          (keypress)="allowOnlyNumber($event)"
         />
       </div>
-
-      <button class="btn btn-login mt-3 w-100">Login</button>
 
       <div class="text-center mt-3">
         <a class="register-link" href="/signup">New User? Register Here</a>
       </div>
+
+  
+      <button 
+        type="button"
+        class="btn btn-login mt-3 w-100"
+        (click)="loginPage()"
+      >
+        Login
+      </button>
     </form>
+
   </div>
 </div>

@@ -1,1 +1,167 @@
-<p>feed-page works!</p>
+
+  <header class="topbar">
+    <div class="topbar__inner">
+      <div class="logo">Feedly<span class="dot">.</span></div>
+      <div class="search">
+        <input type="search" placeholder="Search posts, people, tags..." />
+      </div>
+      <nav class="nav">
+        <!-- <button class="btn ghost">Home</button>
+        <button class="btn ghost">Explore</button> -->
+        <button class="avatar" title="Your profile">
+          <img src="https://i.pravatar.cc/40?img=8" alt="avatar" />
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar">
+      <div class="sidebar__card">
+        <h4>Filters</h4>
+        <div class="chips">
+          <button class="chip active">All</button>
+          <button class="chip">Following</button>
+          <button class="chip">Trending</button>
+          <button class="chip">Images</button>
+          <button class="chip">Videos</button>
+        </div>
+      </div>
+
+      <div class="sidebar__card">
+        <h4>Suggested</h4>
+        <ul class="suggest-list">
+          <li>
+            <img src="https://i.pravatar.cc/36?img=12" alt="user" />
+            <div>
+              <strong>DesignHub</strong>
+              <small>{{'@designhub'}}</small>
+            </div>
+            <button class="btn small">Follow</button>
+          </li>
+          <li>
+            <img src="https://i.pravatar.cc/36?img=14" alt="user" />
+            <div>
+              <strong>FrontEndFam</strong>
+              <small>{{'@frontend'}}</small>
+            </div>
+            <button class="btn small ghost">Follow</button>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sidebar__card footer-note">
+        <small>Made with ♥ • 2025</small>
+      </div>
+    </aside>
+
+    <section class="feeds">
+      <div class="compose">
+        <img class="compose__avatar" src="https://i.pravatar.cc/48?img=5" alt="you" />
+        <input placeholder="What's happening? Share a post..." />
+        <div class="compose__actions">
+          <button class="btn ghost">Photo</button>
+          <button class="btn ghost">Video</button>
+          <button class="btn primary">Post</button>
+        </div>
+      </div>
+
+      <div class="feed-list">
+        <!-- post card -->
+        <article class="post-card">
+          <header class="post-card__header">
+            <img class="avatar" src="https://i.pravatar.cc/48?img=3" alt="author" />
+            <div class="meta">
+              <div class="meta__top">
+                <strong>Jane Doe</strong>
+                <span class="handle">{{'@janed'}}</span>
+                <span class="dot">·</span>
+                <time datetime="2025-12-03">2h</time>
+              </div>
+              <div class="meta__sub">Product Designer • San Francisco</div>
+            </div>
+            <button class="more">⋯</button>
+          </header>
+
+          <div class="post-card__body">
+            <p>Just shipped a small animation micro-interaction for the onboarding flow. Smooth and buttery ✨</p>
+            <div class="post-media">
+              <img src="https://picsum.photos/800/400?random=1" alt="post media" />
+            </div>
+          </div>
+
+          <footer class="post-card__footer">
+            <div class="actions">
+              <button class="action">♡ 124</button>
+              <button class="action">💬 24</button>
+              <button class="action">↗ Share</button>
+            </div>
+            <div class="tags">
+              <button class="tag">#ux</button>
+              <button class="tag">#motion</button>
+            </div>
+          </footer>
+        </article>
+
+        <!-- repeat card (copy-paste in real usage) -->
+        <article class="post-card">
+          <header class="post-card__header">
+            <img class="avatar" src="https://i.pravatar.cc/48?img=4" alt="author" />
+            <div class="meta">
+              <div class="meta__top">
+                <strong>CodeSmith</strong>
+                <span class="handle">{{'@codesmith'}}</span>
+                <span class="dot">·</span>
+                <time datetime="2025-12-02">1d</time>
+              </div>
+              <div class="meta__sub">Exploring new JS patterns</div>
+            </div>
+            <button class="more">⋯</button>
+          </header>
+
+          <div class="post-card__body">
+            <p>10 tips to keep your components small and purpose-driven. Thread 👇</p>
+          </div>
+
+          <footer class="post-card__footer">
+            <div class="actions">
+              <button class="action">♡ 800</button>
+              <button class="action">💬 62</button>
+              <button class="action">↗ Share</button>
+            </div>
+            <div class="tags">
+              <button class="tag">#react</button>
+              <button class="tag">#patterns</button>
+            </div>
+          </footer>
+        </article>
+
+        <!-- empty state example -->
+        <div class="empty-state">
+          <img src="https://picsum.photos/300/180?blur=8" alt="empty" />
+          <h3>No more posts</h3>
+          <p>Try changing filters or follow more people to fill your feed.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <aside class="rightbar">
+      <div class="rightbar__card">
+        <h4>Trends</h4>
+        <ol class="trend-list">
+          <li>#DesignSystems</li>
+          <li>#AItools</li>
+          <li>#CSS</li>
+        </ol>
+      </div>
+
+      <div class="rightbar__card">
+        <h4>Today</h4>
+        <p class="small">You have 3 new notifications</p>
+      </div>
+    </aside>
+  </main>
+
+  <button class="fab" title="New post">＋</button>
+

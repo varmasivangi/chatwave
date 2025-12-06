@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { RouterOutlet } from "@angular/router";
 import { HeaderComponent } from "./header/header.component";
 import { SidebarComponent } from "./sidebar/sidebar.component";
@@ -14,4 +14,5 @@ import { SidebarComponent } from "./sidebar/sidebar.component";
 })
 export class DashboardComponent {
 
+  @Input() data:any;
 }

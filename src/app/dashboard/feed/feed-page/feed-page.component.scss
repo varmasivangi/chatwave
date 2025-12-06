@@ -1,0 +1,410 @@
+/* =========================
+   GLOBAL VARIABLES
+   ========================= */
+
+$bg: #f6fbfb;
+$card: #ffffff;
+$muted: #98a0a6;
+$accent: #57b9b3;
+$coral: #ff6f61;
+$shadow: 0 6px 18px rgba(38, 44, 63, 0.08);
+$rounded: 12px;
+$max-width: 1100px;
+
+* {
+  box-sizing: border-box;
+}
+
+/* =========================
+   TOPBAR
+   ========================= */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(30, 39, 52, 0.04);
+
+  .topbar__inner {
+    max-width: $max-width;
+    margin: 0 auto;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    padding: 12px;
+  }
+
+  .logo {
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    font-size: 18px;
+    color: $accent;
+
+    .dot {
+      color: $coral;
+    }
+  }
+
+  .search {
+    flex: 1;
+
+    input {
+      width: 100%;
+      padding: 10px 14px;
+      border-radius: 10px;
+      border: 1px solid rgba(32, 40, 48, 0.06);
+      background: #fff;
+    }
+  }
+
+  .nav {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+}
+
+/* =========================
+   MAIN LAYOUT GRID
+   ========================= */
+.layout {
+  max-width: $max-width;
+  margin: 24px auto;
+  display: grid;
+  grid-template-columns: 240px 1fr 300px;
+  gap: 24px;
+  padding: 0 16px;
+}
+
+/* =========================
+   SIDEBAR + RIGHTBAR CARDS
+   ========================= */
+.sidebar,
+.rightbar {
+  .sidebar__card,
+  .rightbar__card {
+    background: $card;
+    border-radius: $rounded;
+    padding: 14px;
+    box-shadow: $shadow;
+    margin-bottom: 16px;
+  }
+}
+
+/* =========================
+   SIDEBAR CONTENT
+   ========================= */
+.sidebar {
+  .chips {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .chip {
+    padding: 8px 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(20, 20, 20, 0.04);
+    background: transparent;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .chip.active {
+    background: linear-gradient(90deg, rgba($accent, 0.08), rgba($coral, 0.03));
+    border-color: rgba(0, 0, 0, 0.06);
+  }
+
+  .suggest-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    li {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    img {
+      border-radius: 8px;
+    }
+
+    .btn.small {
+      margin-left: auto;
+    }
+  }
+}
+
+/* =========================
+   FEEDS CENTER CONTENT
+   ========================= */
+.feeds {
+  .compose {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    background: $card;
+    padding: 12px;
+    border-radius: $rounded;
+    box-shadow: $shadow;
+    margin-bottom: 16px;
+
+    .compose__avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+    }
+
+    input {
+      flex: 1;
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid rgba(30, 40, 50, 0.04);
+    }
+
+    .compose__actions {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+  }
+
+  .feed-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .post-card {
+    background: $card;
+    border-radius: $rounded;
+    box-shadow: $shadow;
+    overflow: hidden;
+    padding: 14px;
+
+    &__header {
+      display: flex;
+      gap: 12px;
+      align-items: start;
+      position: relative;
+
+      .avatar {
+        width: 48px;
+        height: 48px;
+        border-radius: 8px;
+      }
+
+      .meta {
+        .meta__top {
+          display: flex;
+          gap: 8px;
+          align-items: center;
+
+          strong {
+            font-size: 15px;
+          }
+
+          .handle,
+          .dot,
+          time {
+            color: $muted;
+            font-size: 13px;
+          }
+        }
+
+        .meta__sub {
+          color: $muted;
+          font-size: 13px;
+          margin-top: 6px;
+        }
+      }
+
+      .more {
+        margin-left: auto;
+        background: transparent;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+        color: rgba(30, 30, 30, 0.6);
+      }
+    }
+
+    &__body {
+      margin-top: 12px;
+
+      p {
+        margin: 0 0 12px 0;
+        line-height: 1.5;
+      }
+
+      .post-media {
+        border-radius: 10px;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          display: block;
+        }
+      }
+    }
+
+    &__footer {
+      margin-top: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+
+      .actions {
+        display: flex;
+        gap: 8px;
+      }
+
+      .action {
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 8px 10px;
+        border-radius: 8px;
+      }
+
+      .tags {
+        display: flex;
+        gap: 8px;
+      }
+
+      .tag {
+        background: rgba(88, 100, 116, 0.06);
+        border: none;
+        padding: 6px 10px;
+        border-radius: 999px;
+        font-size: 13px;
+      }
+    }
+  }
+
+  .empty-state {
+    text-align: center;
+    background: linear-gradient(
+      180deg,
+      rgba(87, 185, 179, 0.04),
+      rgba(255, 255, 255, 0)
+    );
+    padding: 22px;
+    border-radius: $rounded;
+
+    img {
+      border-radius: 8px;
+      width: 100%;
+      max-width: 320px;
+      margin: 0 auto 12px;
+      display: block;
+    }
+
+    h3 {
+      margin: 0 0 6px;
+    }
+
+    p {
+      margin: 0;
+      color: $muted;
+    }
+  }
+}
+
+/* =========================
+   RIGHTBAR TRENDS
+   ========================= */
+.rightbar {
+  .trend-list {
+    padding-left: 18px;
+    color: $muted;
+
+    li {
+      margin: 8px 0;
+    }
+  }
+}
+
+/* =========================
+   BUTTONS
+   ========================= */
+.btn {
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background: #fff;
+
+  &.ghost {
+    border: 1px solid rgba(20, 20, 20, 0.06);
+  }
+
+  &.primary {
+    background: $accent;
+    color: #fff;
+  }
+
+  &.small {
+    padding: 6px 8px;
+    font-size: 13px;
+  }
+}
+
+/* Floating Action Button */
+.fab {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  background: $coral;
+  color: #fff;
+  font-size: 28px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+}
+
+/* =========================
+   RESPONSIVE FIXED VERSION
+   ========================= */
+
+/* ----------- TABLET & SMALL LAPTOP ----------- */
+@media (max-width: 1000px) {
+  .layout {
+    grid-template-columns: 1fr !important;
+    padding: 0 12px !important;
+  }
+
+  .rightbar,
+  .sidebar {
+    display: none !important;
+  }
+
+  .feeds .post-card {
+    padding: 12px !important;
+  }
+}
+
+/* ----------- MOBILE ----------- */
+@media (max-width: 420px) {
+  .topbar .topbar__inner {
+    padding: 8px !important;
+  }
+
+  .topbar .logo {
+    font-size: 16px !important;
+  }
+
+  .feeds .compose .compose__avatar {
+    width: 40px !important;
+    height: 40px !important;
+  }
+}
